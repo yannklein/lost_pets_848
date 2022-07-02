@@ -1,0 +1,27 @@
+<div class="container">
+  <div class="justify-content-center align-items-center d-flex my-5">
+    <%= image_tag "logo.jpg", class: "rounded-circle me-3", style: "width: 120px" %>
+    <h1>Lost pets</h1>
+  </div>
+  <%= link_to new_pet_path do %>
+    <div class="btn btn-primary my-3">
+      🐶 Found a pet!
+    </div>
+  <% end %>
+  
+<div class="row">
+  <% @pets.each do |pet| %>
+    <div class="col-6 col-lg-4">
+      <div class="card mb-3">
+        <img src="https://loremflickr.com/320/240/<%= pet.species %>" class="card-img-top" alt="...">
+        <div class="card-body">
+          <h5 class="card-title"><%= pet.name %></h5>
+          <p class="card-text">📍 <%= pet.location %></p>
+          <p class="card-text">📆 Found <%= pet.days_ago %> days ago</p>
+          <%= link_to 'Know more...', pet_path(pet), class: "btn btn-primary" %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+  </div>
+</div>

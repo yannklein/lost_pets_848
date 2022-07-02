@@ -1,0 +1,17 @@
+<div class="container">
+  <h1 class="my-5 text-center">Add a new pet</h1>
+  <div class="row justify-content-center my-5">
+    <div class="col-6">
+      <%= simple_form_for @pet do |f| %>
+        <%= f.input :name %>
+        <%= f.input :species, collection: Pet::SPECIES %>
+        <%= f.input :color %>
+        <%= f.input :gender, collection: Pet::GENDER %>
+        <%= f.input :location %>
+        <%= f.input :found_on %>
+        <%= f.submit "Add this pet" , class: "btn btn-primary" %>
+      <% end %>
+      
+    </div>
+  </div>
+</div>
